@@ -65,7 +65,7 @@ var fight = function(enemy){
             
     
             // use debugger to pause script from running and check what's going on at that moment in the code
-            // debugger;
+            
     
             // pass the pickedenemy.name variable's value into the fight function, where it will assume the value of the enemy.name parameter
             fight(pickedEnemyObj);
@@ -113,8 +113,8 @@ var endGame = function() {
 
   var shop = function() {
     var shopOptionPrompt = window.prompt(
-        "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice.");
-
+      "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one 1 for REFILL, 2 for UPGRADE, or 3 for LEAVE.");
+        shopOptionPrompt = parseInt(shopOptionPrompt);
         switch(shopOptionPrompt){
             case 1:
             playerInfo.refillHealth();
