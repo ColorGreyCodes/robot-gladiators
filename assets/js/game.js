@@ -5,10 +5,15 @@ var randomNumber = function(min, max){
 };
 
 var fight = function(enemy){
+    var isPlayerTurn = true;
+    if(Math.random() > 0.5) {
+        isPlayerTurn = false;
+    }
+
     console.log(enemy);
     //repeat and execute as long as the enemy-robot is alive
     while(playerInfo.health > 0 && enemy.health > 0){
-
+        
     if(fightOrSkip()) {
       break;
     }
@@ -46,6 +51,7 @@ var fight = function(enemy){
     } else{
         window.alert(playerInfo.name + " still has " + playerInfo.health + " health left.");
     }
+    isPlayerTurn = !isPlayerTurn;
     } // end of while loop
   } //end of fight function
   
@@ -62,11 +68,7 @@ var fight = function(enemy){
     
             //reset enemy.health before round starts
             pickedEnemyObj.health = randomNumber(40, 60);
-            
-    
-            // use debugger to pause script from running and check what's going on at that moment in the code
-            
-    
+
             // pass the pickedenemy.name variable's value into the fight function, where it will assume the value of the enemy.name parameter
             fight(pickedEnemyObj);
 
